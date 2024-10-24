@@ -1,0 +1,156 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link
+      rel="SHORTCUT ICON"
+      href="https://petstation.vn/upload/hinhanh/a5db946d1602e95cb013-16268_32x28.jpg"
+      type="image/x-icon"
+    />
+    <title>
+      PET STATION I Phụ kiện và dich vụ chăm sóc thú cưng hệ thống toàn quốc
+    </title>
+  </head>
+  <body>
+    <!--Nav-->
+    <div class="container">
+      <nav>
+        <div class="menu-left">
+          <img src="/img/logo-2206.png" alt="Logo" />
+          <a href="index.html">TRANG CHỦ</a>
+          <a href="#">GIỚI THIỆU</a>
+          <div class="dropdown">
+            <a class="dropdown-toggle" href="#">SẢN PHẨM</a>
+            <ul class="dropdown-menu"  id="menu">
+              <li><a class="dropdown-items" >PATE</a></li>
+              <li>
+                <a class="dropdown-items" >THỨC ĂN HẠT</a>
+              </li>
+              <li><a class="dropdown-items" >BÁNH THƯỞNG</a></li>
+              <li>
+                <a class="dropdown-items" 
+                  >THỰC PHẨM CHỨC NĂNG</a
+                >
+              </li>
+              <li><a class="dropdown-items" >ĐỒ CHƠI</a></li>
+              <li><a class="dropdown-items" >DỤNG CỤ</a></li>
+            </ul>
+          </div>
+          <a href="#">DỊCH VỤ</a>
+          <a href="#">ĐẶT LỊCH</a>
+          <a href="#">SỰ KIỆN</a>
+          <a href="#">LIÊN HỆ</a>
+          <div class="menu-right">
+            <div class="search-container">
+              <button type="button" id="search-icon" class="search-icon">
+                <i class="bi bi-search"></i>
+              </button>
+              <div class="box-s" style="display: none">
+                <p class="titlebox">Tìm kiếm</p>
+                <div class="form" style="margin-top: 10px">
+                  <input type="text" placeholder="Nhập từ khóa tìm kiếm..." />
+                  <input type="hidden" />
+                </div>
+              </div>
+            </div>
+            <a href="#" class="cart">
+              <i class="bi bi-cart3"></i>
+            </a>
+            <a href="#" class="user">
+              <i class="bi bi-person"></i>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <!--Banner-->
+    <div class="banner">
+      <img src="/img/banersanpham.jpg" alt="Banner" />
+    </div>
+
+    <!--Main-->
+    <main>
+    
+        <section id="sp_trong_loai">
+            <h2> <span id="tenloai"></span> </h2>
+            <img src="/img/tieude_giua.png" alt="">
+            <div id="data"></div> 
+        </section>
+    
+        
+  </main>
+     
+      </div>
+    </div>
+    <!--footer-->
+    <footer id="footer" class="footer">
+        <div class="footer-content">
+          <div class="logo">
+            <img src="/img/logo-2206.png" alt="Pet Station Logo" />
+          </div>
+           <hr style=" height: 2px;  width: 100%; background-color: white;" />
+          <br>
+          <div class="branches">
+            <div class="branch">
+              <img src="/img/infodiachi-0789.png" alt="" />
+              <p>Chi nhánh 1</p>
+              <p>369A Tân Sơn Nhì, P. Tân Thành, Q. Tân Phú, TP.HCM</p>
+            </div>
+            <div class="branch">
+              <img src="/img/infodiachi-0789.png" alt="" />
+              <p>Chi nhánh 2</p>
+              <p>A1 Phan Văn Trị, P.7, Q. Gò Vấp, TP.HCM</p>
+            </div>
+          </div>
+          <div class="contacts">
+            <div class="contact-item">
+              <img src="/img/infophone-8934.png" alt="" />
+              <p>Hotline</p>
+              <p>1900 099 962</p>
+            </div>
+            <div class="contact-item">
+              <img src="/img/infoemail-2995.png" alt="" />
+              <p>Email</p>
+              <p>chamsockhachhang@petstation.vn</p>
+            </div>
+            <div class="contact-item">
+              <img src="/img/infoclock-8778.png" alt="" />
+              <p>Thời gian mở cửa</p>
+              <p>8:00am - 10:00pm</p>
+              
+            </div>
+            
+          </div>
+          <img src="/img/dmca.png" alt=""> 
+          <br>
+          <hr style=" height: 2px;  width: 100%; background-color: white;" />
+          <br>
+          <div id="mod_copyright" bis_skin_checked="1">
+            <div class="thognke_truycap" bis_skin_checked="1">Đang online: <span>4</span> | Tháng: <span>20597</span> | Tổng truy cập: <span>1653734</span></div>
+            <div class="copyright" bis_skin_checked="1">2020 Copyright ©VŨ PHƯƠNG NAM - PS32722.</div>
+        </div>
+          <button id="scrollToTopBtn" title="Lên đầu trang">⬆</button>
+        </div>
+      </footer>
+  </body>
+  <script src="js/styles.js"></script>
+  <script type="module">
+    import { lay_loai, lay_sp_trong_loai, lay_ten_loai}  from './js/index.js';
+    let params = new URLSearchParams(location.search);
+    let id = Number(params.get("id")) ; 
+    document.querySelector("#menu").innerHTML = await lay_loai();
+    document.querySelector("#sp_trong_loai #data").innerHTML = await lay_sp_trong_loai(id);
+    document.querySelector("#sp_trong_loai #tenloai").innerHTML = await lay_ten_loai(id);
+
+
+    </script>
+</html>
